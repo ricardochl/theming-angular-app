@@ -1,0 +1,11 @@
+<mat-button-toggle-group
+  class="theme-toggle"
+  name="themeToggle"
+  aria-label="Theme Toggle"
+  (change)="toggleTheme($event)"
+  [value]="selectedTheme"
+>
+  <mat-button-toggle [value]="theme.AUTO"><mat-icon>contrast</mat-icon><span>AUTO</span></mat-button-toggle>
+  <mat-button-toggle [value]="theme.LIGHT"><mat-icon>light_mode</mat-icon><span>LIGHT</span></mat-button-toggle>
+  <mat-button-toggle [value]="theme.DARK"><mat-icon>dark_mode</mat-icon><span>DARK</span></mat-button-toggle>
+</mat-button-toggle-group>
