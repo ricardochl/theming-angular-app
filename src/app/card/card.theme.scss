@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  $primary: map.get($theme, primary);
+  $is-dark: map.get($theme, is-dark);
+  $foreground: map.get($theme, foreground);
+
+  .example-card {
+    color: if($is-dark, map.get($foreground, text), map.get($primary, 500));
+  }
+}
+
+@mixin typography($theme) {
+  .example-card mat-card-content {
+    font-size: 16px
+  }
+}
+
+@mixin theme($theme) {
+  @if mat.theme-has($theme, color) {
+    @include color($theme);
+  }
+
+  @if mat.theme-has($theme, typography) {
+    @include typography($theme);
+  }
+}

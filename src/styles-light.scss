@@ -1,10 +1,14 @@
 @use '@angular/material' as mat;
 @use 'light-theme' as theme;
+@use 'app/card/card.theme.scss';
 
 @include mat.core();
 // @include mat.typography-hierarchy()
 @include mat.core-theme(theme.$my-light-theme);
 @include mat.all-component-themes(theme.$my-light-theme);
+
+// Angular Material theming. Include theme styles for core and each component used in the app.
+@include card.theme(theme.$my-light-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
